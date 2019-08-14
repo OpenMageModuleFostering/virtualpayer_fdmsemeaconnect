@@ -1,0 +1,21 @@
+<layout version="0.1.0">
+	<fdmsemeaconnect_redirect_success>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+	
+		<reference name="content">
+			<block type="core/template" name="fdmsemeaconnect.redirect.success" template="fdmsemeaconnect/redirect/success.phtml" />
+		</reference>
+	</fdmsemeaconnect_redirect_success>
+	
+	<fdmsemeaconnect_redirect_failure>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+
+		<reference name="content">
+			<block type="core/template" name="fdmsemeaconnect.redirect.failure" template="fdmsemeaconnect/redirect/failure.phtml" />
+		</reference>				
+	</fdmsemeaconnect_redirect_failure>
+</layout>

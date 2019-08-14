@@ -1,0 +1,9 @@
+<?php
+
+	$block = Mage::app()->getLayout()->createBlock('cms/block')->setBlockId('fdmsemeaconnect_error');	
+
+	$html = Mage::helper('fdmsemeaconnect')->getCustomerMessage($block, Mage::getModel('sales/order')->loadByIncrementId(Mage::getSingleton('checkout/session')->getLastRealOrderId()), Mage::getModel('fdmsemeaconnect/fdmsemeaconnect')->getCollection()->addFieldToFilter('order_id', Mage::getSingleton('checkout/session')->getLastRealOrderId())->getFirstItem());
+
+	echo $html;
+	
+?>
