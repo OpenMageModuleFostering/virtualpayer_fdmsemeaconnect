@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Virtualpayer_Fdmsconnectredirectredirect Plugin
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   Virtualpayer
+ * @package    Virtualpayer_Fdmsconnectredirectredirect
+ * @copyright  Copyright (c) 2013 VirtualPayer
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+	<modules>
+		<Virtualpayer_Fdmsconnectredirect>
+			<version>1.0.1</version>
+		</Virtualpayer_Fdmsconnectredirect>
+	</modules>
+	<global>
+		<models>
+			<fdmsconnectredirect>
+				<class>Virtualpayer_Fdmsconnectredirect_Model</class>
+                <resourceModel>fdmsconnectredirect_mysql4</resourceModel>
+			</fdmsconnectredirect>
+            <fdmsconnectredirect_mysql4>
+                <class>Virtualpayer_Fdmsconnectredirect_Model_Mysql4</class>
+                <entities>
+                    <fdmsconnectredirect>
+                        <table>fdmsconnectredirect</table>
+                    </fdmsconnectredirect>
+                </entities>
+            </fdmsconnectredirect_mysql4>
+		</models>
+		<blocks>
+			<fdmsconnectredirect>
+				<class>Virtualpayer_Fdmsconnectredirect_Block</class>
+			</fdmsconnectredirect>
+		</blocks>
+		<helpers>
+			<fdmsconnectredirect>
+				<class>Virtualpayer_Fdmsconnectredirect_Helper</class>
+			</fdmsconnectredirect>
+		</helpers>
+		<resources>
+			<fdmsconnectredirect_setup>
+				<setup>
+					<module>Virtualpayer_Fdmsconnectredirect</module>
+					<class>Virtualpayer_Fdmsconnectredirect_Model_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</fdmsconnectredirect_setup>
+			<fdmsconnectredirect_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</fdmsconnectredirect_write>
+			<fdmsconnectredirect_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</fdmsconnectredirect_read>
+		</resources>
+		<payment>
+			<cc>
+				<types>
+					<VI>
+						<code>VI</code>
+						<name>Visa</name>
+						<order>0</order>
+					</VI>
+					<MC>
+						<code>MC</code>
+						<name>MasterCard</name>
+						<order>100</order>
+					</MC>
+					<AM>
+						<code>AM</code>
+						<name>American Express</name>
+						<order>200</order>
+					</AM>
+				</types>
+			</cc>
+		</payment>
+	</global>
+	<frontend>
+		<routers>
+			<fdmsconnectredirect>
+				<use>standard</use>
+				<args>
+					<module>Virtualpayer_Fdmsconnectredirect</module>
+					<frontName>fdmsconnectredirect</frontName>
+				</args>
+			</fdmsconnectredirect>
+		</routers>
+		
+		<layout>
+			<updates>
+				<fdmsconnectredirect>
+					<file>fdmsconnectredirect.xml</file>
+				</fdmsconnectredirect>
+			</updates>
+		</layout>
+	</frontend>
+
+	<adminhtml>
+		<menu>
+			<sales module="sales">
+				<children>
+					<fdmsconnectredirect module="fdmsconnectredirect">
+						<title>Fdmsconnectredirect Transactions</title>
+						<sort_order>300</sort_order>
+						<action>fdmsconnectredirect/adminhtml_fdmsconnectredirect</action>
+					</fdmsconnectredirect>
+				</children>
+			</sales>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<sales>
+							<children>
+								<fdmsconnectredirect>
+									<title>First Data Connect Transactions</title>
+									<sort_order>10</sort_order>
+								</fdmsconnectredirect>
+							</children>
+						</sales>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<fdmsconnectredirect>
+					<file>fdmsconnectredirect.xml</file>
+				</fdmsconnectredirect>
+			</updates>
+		</layout>
+	</adminhtml>
+	<default>
+		<payment>
+			<fdmsconnectredirect>
+				<active>0</active>
+				<title>First Data EMEA Connect Payment Gateway</title>
+				<model>fdmsconnectredirect/redirect</model>
+				<order_status>processing</order_status>
+				<payment_action>authorize</payment_action>
+			</fdmsconnectredirect>
+		</payment>
+	</default>
+</config>

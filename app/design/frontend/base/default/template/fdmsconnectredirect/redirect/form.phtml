@@ -1,0 +1,13 @@
+<?php
+
+?>
+<fieldset class="form-list">
+    <?php $_code=$this->getMethodCode() ?>
+    
+    <?php $redirect = Mage::getModel('fdmsconnectredirect/redirect'); ?>
+     <ul id="payment_form_<?php echo $_code ?>" style="display:none">
+        <li>
+            <?php echo $this->__('You will be redirected to our payment processor First Data secured hosted platform.') ?>
+        </li>
+    </ul>
+</fieldset>

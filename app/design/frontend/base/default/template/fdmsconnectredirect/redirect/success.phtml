@@ -1,0 +1,9 @@
+<?php
+
+	$block = Mage::app()->getLayout()->createBlock('cms/block')->setBlockId('fdmsconnectredirect_success');	
+
+	$html = Mage::helper('fdmsconnectredirect')->getCustomerMessage($block, Mage::getModel('sales/order')->loadByIncrementId(Mage::getSingleton('checkout/session')->getLastRealOrderId()), Mage::getModel('fdmsconnectredirect/fdmsconnectredirect')->getCollection()->addFieldToFilter('order_id', Mage::getSingleton('checkout/session')->getLastRealOrderId())->getFirstItem());
+
+	echo $html;
+	
+?>

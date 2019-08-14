@@ -1,12 +1,12 @@
 {
     "name": "OpenMageModuleFostering/VirtualPayer_FdmsEMEAconnect",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "Open-Software-Licence",
     "homepage": "",
-    "description": "This extension offers a convenient way to accept online payments via the First Data Merchant Solutions Connect Internet Payment Gateway",
+    "description": "Issues with 'Success' and 'Failure' pages not displaying has now been resolved.",
     "authors": [
     {
-        "name": "Bright Ocansey",
+        "name": "VirtualPayer",
         "email": "support@virtualpayer.com"
     }
 ],

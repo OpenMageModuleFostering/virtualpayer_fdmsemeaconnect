@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <fdmsconnectredirect_adminhtml_fdmsconnectredirect_index>
+        <reference name="content">
+            <block type="fdmsconnectredirect/adminhtml_fdmsconnectredirect" name="fdmsconnectredirect" />
+        </reference>
+    </fdmsconnectredirect_adminhtml_fdmsconnectredirect_index>
+</layout>

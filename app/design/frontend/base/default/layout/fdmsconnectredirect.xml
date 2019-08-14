@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<fdmsconnectredirect_redirect_success>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+	
+		<reference name="content">
+			<block type="core/template" name="fdmsconnectredirect.redirect.success" template="fdmsconnectredirect/redirect/success.phtml" />
+		</reference>
+	</fdmsconnectredirect_redirect_success>
+	
+	<fdmsconnectredirect_redirect_failure>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+
+		<reference name="content">
+			<block type="core/template" name="fdmsconnectredirect.redirect.failure" template="fdmsconnectredirect/redirect/failure.phtml" />
+		</reference>				
+	</fdmsconnectredirect_redirect_failure>
+</layout>
