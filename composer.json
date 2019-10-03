@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/VirtualPayer_FdmsEMEAconnect",
+    "name": "OpenMageModuleFostering\/VirtualPayer_FdmsEMEAconnect",
     "type": "magento-module",
     "license": "Open-Software-Licence",
     "homepage": "",
     "description": "Issues with 'Success' and 'Failure' pages not displaying has now been resolved.",
     "authors": [
-    {
-        "name": "VirtualPayer",
-        "email": "support@virtualpayer.com"
-    }
-],
+        {
+            "name": "VirtualPayer",
+            "email": "support@virtualpayer.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
